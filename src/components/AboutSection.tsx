@@ -7,15 +7,15 @@ export const AboutSection: React.FC = () => {
   const { profile, competencies, education } = data;
 
   return (
-    <section id="about" className="py-24 lg:py-32 relative border-t border-zinc-800/80 bg-zinc-950/40">
+    <section id="about" className="py-16 sm:py-24 lg:py-32 relative border-t border-zinc-800/80 bg-zinc-950/40 overflow-hidden">
       
       {/* Background Accent Glow */}
-      <div className="absolute top-1/3 left-0 w-80 h-80 bg-[#e50914]/5 rounded-full blur-[150px] pointer-events-none"></div>
+      <div className="absolute top-1/3 left-0 w-72 h-72 sm:w-80 sm:h-80 bg-[#e50914]/5 rounded-full blur-[150px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="mb-14">
+        <div className="mb-10 sm:mb-14">
           <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#e50914] font-bold mb-3">
             <span className="w-2 h-2 rounded-full bg-[#e50914] shadow-[0_0_8px_#e50914]"></span>
             Philosophy & Heritage
@@ -26,7 +26,7 @@ export const AboutSection: React.FC = () => {
         </div>
 
         {/* 2-Column Split: Editorial Bio & Competencies Matrix */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-start">
           
           {/* Left Column: Deep Bio Narrative */}
           <div className="lg:col-span-7 space-y-6">

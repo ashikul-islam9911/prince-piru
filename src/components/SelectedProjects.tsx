@@ -15,15 +15,15 @@ export const SelectedProjects: React.FC<SelectedProjectsProps> = ({
   const { data } = usePortfolio();
 
   return (
-    <section id="work" className="py-24 lg:py-32 relative border-t border-zinc-800/80">
+    <section id="work" className="py-16 sm:py-24 lg:py-32 relative border-t border-zinc-800/80 overflow-hidden">
       
       {/* Background Subtle Ambient Glow */}
-      <div className="absolute top-1/2 right-0 w-96 h-96 bg-[#e50914]/5 rounded-full blur-[160px] pointer-events-none -z-10"></div>
+      <div className="absolute top-1/2 right-0 w-80 h-80 sm:w-96 sm:h-96 bg-[#e50914]/5 rounded-full blur-[160px] pointer-events-none -z-10"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Clean Section Header */}
-        <div className="mb-12">
+        <div className="mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#e50914] font-bold mb-3">
             <span className="w-2 h-2 rounded-full bg-[#e50914] shadow-[0_0_8px_#e50914]"></span>
             Portfolio
@@ -37,7 +37,7 @@ export const SelectedProjects: React.FC<SelectedProjectsProps> = ({
         </div>
 
         {/* Pure Category Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
           {data.categories.map((cat) => {
             const projectCount = data.projects.filter(p => p.category === cat.name).length;
 
@@ -68,18 +68,18 @@ export const SelectedProjects: React.FC<SelectedProjectsProps> = ({
                 </div>
 
                 {/* Below Thumbnail: Title & Project Count (No short description) */}
-                <div className="p-5 sm:p-6 flex items-center justify-between gap-4 bg-zinc-950 border-t border-zinc-800/80">
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight group-hover:text-[#e50914] transition-colors leading-snug">
+                <div className="p-4 sm:p-6 flex items-center justify-between gap-3 sm:gap-4 bg-zinc-950 border-t border-zinc-800/80">
+                  <div className="min-w-0">
+                    <h3 className="text-lg sm:text-2xl font-bold text-white tracking-tight group-hover:text-[#e50914] transition-colors leading-snug truncate">
                       {cat.name}
                     </h3>
                   </div>
 
-                  <div className="flex items-center gap-3 shrink-0">
-                    <span className="text-xs font-mono px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300 group-hover:border-zinc-700 transition-colors">
+                  <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+                    <span className="text-[11px] sm:text-xs font-mono px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300 group-hover:border-zinc-700 transition-colors">
                       {projectCount} Projects
                     </span>
-                    <span className="p-2 rounded-lg bg-zinc-900/80 border border-zinc-800 text-zinc-400 group-hover:text-white group-hover:border-[#e50914]/40 transition-colors">
+                    <span className="p-1.5 sm:p-2 rounded-lg bg-zinc-900/80 border border-zinc-800 text-zinc-400 group-hover:text-white group-hover:border-[#e50914]/40 transition-colors">
                       <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </span>
                   </div>

@@ -30,18 +30,30 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="py-12 border-t border-zinc-800/80 bg-[#070709] relative z-10 text-xs font-mono text-zinc-400">
+    <footer className="py-10 sm:py-12 border-t border-zinc-800/80 bg-[#070709] relative z-10 text-xs font-mono text-zinc-400 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           
           {/* Brand Identity & London Time */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-center sm:text-left">
             <a
               href="#"
               className="flex items-baseline gap-1 text-lg font-black text-white hover:opacity-90 transition-opacity"
             >
-              <span className="font-['Syne',sans-serif] tracking-wider uppercase">PRINCE</span>
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#e50914]"></span>
+              {settings.logoUrl ? (
+                <img
+                  src={settings.logoUrl}
+                  alt={settings.brandName}
+                  className="h-7 w-auto max-w-[130px] object-contain rounded"
+                />
+              ) : (
+                <>
+                  <span className="font-['Syne',sans-serif] tracking-wider uppercase">
+                    {settings.brandName || data.profile.name}
+                  </span>
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#e50914]"></span>
+                </>
+              )}
             </a>
 
             <span className="hidden sm:inline text-zinc-700">|</span>

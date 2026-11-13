@@ -9,11 +9,18 @@
     --color-crimson: #e50914;
   }
 
+  html {
+    overflow-x: clip;
+    max-width: 100%;
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: var(--font-body);
     background-color: #09090b;
     color: #f4f4f5;
-    overflow-x: hidden;
+    overflow-x: clip;
+    max-width: 100%;
   }
 
   h1, h2, h3, h4, h5, h6 {

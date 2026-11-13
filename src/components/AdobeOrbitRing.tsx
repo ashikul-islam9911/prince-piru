@@ -134,16 +134,19 @@ export const AdobeOrbitRing: React.FC<AdobeOrbitRingProps> = ({ children }) => {
         angleRef.current = (angleRef.current + speed * delta) % (Math.PI * 2);
       }
 
-      const isMobile = window.innerWidth < 640;
-      // Orbit ellipse radii
-      // Horizontal radius scaled for mobile screen widths to eliminate overflow
-      const Rx = isMobile ? 155 : 255;
+      const viewportWidth = window.innerWidth;
+      const isMobile = viewportWidth < 640;
+      const isTablet = viewportWidth >= 640 && viewportWidth < 1024;
+
+      // Orbit ellipse radii safely constrained to viewport width so badges never clip off-screen
+      const maxMobileRx = Math.max(96, Math.floor((viewportWidth - 56) / 2) - 20);
+      const Rx = isMobile ? Math.min(136, maxMobileRx) : isTablet ? 215 : 250;
       // Vertical radius for 3D perspective depth
-      const Ry = isMobile ? 65 : 105;
-      // Vertical center offset to position orbit lower around photo
-      const yCenterOffset = isMobile ? 32 : 55;
+      const Ry = isMobile ? Math.round(Rx * 0.42) : isTablet ? 88 : 102;
+      // Vertical center offset to position orbit nicely around photo
+      const yCenterOffset = isMobile ? 22 : isTablet ? 44 : 52;
       // Inclination tilt angle of the 3D orbital plane (-15 degrees)
-      const tiltAngle = -0.26; // ~ -15 degrees in radians
+      const tiltAngle = -0.26;
       const cosTilt = Math.cos(tiltAngle);
       const sinTilt = Math.sin(tiltAngle);
 
@@ -173,8 +176,14 @@ export const AdobeOrbitRing: React.FC<AdobeOrbitRingProps> = ({ children }) => {
         // When v < 0: In BACK (BEHIND) the portrait card
         const isFront = v >= 0;
 
-        // Smooth scale: 0.72 (farthest behind) to 1.15 (closest in front)
-        const scale = isFront ? 0.92 + 0.23 * v : 0.72 + 0.20 * (v + 1);
+        // Smooth scale: balanced on mobile to keep badges crisp and inside screen
+        const scale = isMobile
+          ? isFront
+            ? 0.88 + 0.14 * v
+            : 0.68 + 0.18 * (v + 1)
+          : isFront
+            ? 0.92 + 0.23 * v
+            : 0.72 + 0.20 * (v + 1);
 
         // Smooth opacity: 0.55 (farthest behind) to 1.0 (in front)
         const opacity = isFront ? 1.0 : 0.55 + 0.35 * (v + 1);
@@ -182,7 +191,7 @@ export const AdobeOrbitRing: React.FC<AdobeOrbitRingProps> = ({ children }) => {
         // Z-Index: 5 when behind the portrait card (card has z-20), 35 when in front!
         const zIndex = isFront ? 35 : 5;
 
-        // Apply direct style transforms without causing React re-renders, shifted lower by yCenterOffset
+        // Apply direct style transforms without causing React re-renders
         el.style.transform = `translate3d(calc(-50% + ${x}px), calc(-50% + ${y + yCenterOffset}px), 0) scale(${scale})`;
         el.style.zIndex = `${zIndex}`;
         el.style.opacity = `${opacity}`;
@@ -198,20 +207,20 @@ export const AdobeOrbitRing: React.FC<AdobeOrbitRingProps> = ({ children }) => {
   return (
     <div
       ref={containerRef}
-      className="relative w-full max-w-[270px] sm:max-w-sm md:max-w-md flex items-center justify-center"
+      className="relative w-full max-w-[230px] sm:max-w-[340px] md:max-w-md mx-auto flex items-center justify-center py-6 sm:py-0"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => {
         setIsPaused(false);
         setActiveApp(null);
       }}
     >
-      {/* 3D Tilted Orbital Rings (Visual Halo Path shifted lower) */}
+      {/* 3D Tilted Orbital Rings (Visual Halo Path safely scaled to card) */}
       {/* 1. Back Ring Halo (Behind Photo, z-4) */}
       <div
         className="absolute inset-0 pointer-events-none flex items-center justify-center z-[4]"
         style={{ transform: `translate3d(0, ${yOffset}px, 0) rotate(-15deg)` }}
       >
-        <div className="w-[125%] sm:w-[135%] h-[58%] rounded-[50%] border border-[#e50914]/20 border-dashed shadow-[0_0_30px_rgba(229,9,20,0.15)] [mask-image:linear-gradient(to_bottom,#000_30%,transparent_70%)]"></div>
+        <div className="w-[116%] sm:w-[130%] h-[52%] sm:h-[58%] rounded-[50%] border border-[#e50914]/20 border-dashed shadow-[0_0_24px_rgba(229,9,20,0.15)] [mask-image:linear-gradient(to_bottom,#000_30%,transparent_70%)]"></div>
       </div>
 
       {/* 2. Front Ring Halo (In Front of Photo, z-30) */}
@@ -219,7 +228,7 @@ export const AdobeOrbitRing: React.FC<AdobeOrbitRingProps> = ({ children }) => {
         className="absolute inset-0 pointer-events-none flex items-center justify-center z-[30]"
         style={{ transform: `translate3d(0, ${yOffset}px, 0) rotate(-15deg)` }}
       >
-        <div className="w-[125%] sm:w-[135%] h-[58%] rounded-[50%] border-t-2 border-b-0 border-l border-r border-[#e50914]/40 shadow-[0_0_35px_rgba(229,9,20,0.25)] [mask-image:linear-gradient(to_top,#000_40%,transparent_100%)]"></div>
+        <div className="w-[116%] sm:w-[130%] h-[52%] sm:h-[58%] rounded-[50%] border-t-2 border-b-0 border-l border-r border-[#e50914]/40 shadow-[0_0_28px_rgba(229,9,20,0.22)] [mask-image:linear-gradient(to_top,#000_40%,transparent_100%)]"></div>
       </div>
 
       {/* The 8 Orbiting 3D Adobe Software Logos */}

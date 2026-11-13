@@ -31,20 +31,20 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialSubject =
   };
 
   return (
-    <section id="contact" className="py-24 lg:py-32 relative border-t border-zinc-800/80 bg-zinc-950">
+    <section id="contact" className="py-16 sm:py-24 lg:py-32 relative border-t border-zinc-800/80 bg-zinc-950 overflow-hidden">
       
       {/* Background Crimson Atmosphere */}
-      <div className="absolute top-1/4 left-1/4 w-[35rem] h-[35rem] bg-[#e50914]/8 rounded-full blur-[190px] pointer-events-none"></div>
+      <div className="absolute top-1/4 left-1/4 w-[22rem] h-[22rem] sm:w-[35rem] sm:h-[35rem] bg-[#e50914]/8 rounded-full blur-[190px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="mb-16">
+        <div className="mb-10 sm:mb-16">
           <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#e50914] font-bold mb-3">
             <span className="w-2 h-2 rounded-full bg-[#e50914] shadow-[0_0_8px_#e50914]"></span>
             Start a Collaboration
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight">
             Let's Work Together.
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base mt-2 max-w-xl font-light">
@@ -53,13 +53,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialSubject =
         </div>
 
         {/* 2-Column Split: Direct Contact & Interactive Inquiry Form */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-start">
           
           {/* Left Column: Direct Outreach & Social Links */}
-          <div className="lg:col-span-5 space-y-8">
+          <div className="lg:col-span-5 space-y-6 sm:space-y-8">
             
             {/* 1-Click Copy Email Card */}
-            <div className="p-6 sm:p-8 rounded-2xl bg-zinc-900/40 border border-zinc-800/90 space-y-4">
+            <div className="p-5 sm:p-8 rounded-2xl bg-zinc-900/40 border border-zinc-800/90 space-y-4">
               <div className="flex items-center justify-between text-xs font-mono text-zinc-400">
                 <span>DIRECT EMAIL DISPATCH</span>
                 <span className="text-emerald-400 flex items-center gap-1.5">
@@ -142,7 +142,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialSubject =
 
           {/* Right Column: High-End Inquiry Form */}
           <div className="lg:col-span-7">
-            <div className="p-8 sm:p-10 rounded-3xl bg-zinc-950 border border-zinc-800 shadow-2xl">
+            <div className="p-5 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-zinc-950 border border-zinc-800 shadow-2xl">
               {submitted ? (
                 <div className="py-12 text-center space-y-4">
                   <div className="w-14 h-14 mx-auto rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">

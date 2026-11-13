@@ -108,7 +108,7 @@ function PortfolioApp() {
   };
 
   return (
-    <div className="min-h-screen bg-[#09090b] text-[#f4f4f5] selection:bg-[#e50914] selection:text-white font-['Plus_Jakarta_Sans',sans-serif]">
+    <div className="min-h-screen w-full overflow-x-clip bg-[#09090b] text-[#f4f4f5] selection:bg-[#e50914] selection:text-white font-['Plus_Jakarta_Sans',sans-serif]">
       {/* Top Fixed Navigation with Login Access */}
       <Navbar
         onOpenContact={() => handleOpenContact()}
