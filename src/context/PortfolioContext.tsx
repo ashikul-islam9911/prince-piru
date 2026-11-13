@@ -112,24 +112,30 @@ const toRelativeAssetUrl = (url?: string): string => {
   return url.startsWith('/assets/') ? `.${url}` : url;
 };
 
-const normalizePortfolioData = (raw: PortfolioDataType): PortfolioDataType => ({
+const normalizePortfolioData = (raw: Partial<PortfolioDataType>): PortfolioDataType => ({
+  ...PORTFOLIO_DATA,
   ...raw,
   profile: {
-    ...raw.profile,
-    portraitImage: toRelativeAssetUrl(raw.profile?.portraitImage)
+    ...PORTFOLIO_DATA.profile,
+    ...(raw.profile || {}),
+    portraitImage: toRelativeAssetUrl(raw.profile?.portraitImage || PORTFOLIO_DATA.profile.portraitImage)
   },
-  categories: (raw.categories || []).map(cat => ({
+  stats: Array.isArray(raw.stats) ? raw.stats : PORTFOLIO_DATA.stats,
+  categories: (Array.isArray(raw.categories) ? raw.categories : PORTFOLIO_DATA.categories).map(cat => ({
     ...cat,
     imageUrl: toRelativeAssetUrl(cat.imageUrl)
   })),
-  projects: (raw.projects || []).map(proj => ({
+  projects: (Array.isArray(raw.projects) ? raw.projects : PORTFOLIO_DATA.projects).map(proj => ({
     ...proj,
     imageUrl: toRelativeAssetUrl(proj.imageUrl),
     gallery: (proj.gallery || []).map(asset => ({
       ...asset,
       url: toRelativeAssetUrl(asset.url)
     }))
-  }))
+  })),
+  skills: Array.isArray(raw.skills) ? raw.skills : PORTFOLIO_DATA.skills,
+  workflow: Array.isArray(raw.workflow) ? raw.workflow : PORTFOLIO_DATA.workflow,
+  testimonials: Array.isArray(raw.testimonials) ? raw.testimonials : PORTFOLIO_DATA.testimonials
 });
 
 const PortfolioContext = createContext<PortfolioContextType | undefined>(undefined);
