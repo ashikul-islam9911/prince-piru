@@ -1,5 +1,4 @@
 import React from 'react';
-import { ArrowDownRight, ArrowUpRight } from 'lucide-react';
 import { usePortfolio } from '../context/PortfolioContext';
 import { CreativeWorkspaceBackground } from './CreativeWorkspaceBackground';
 import { AdobeOrbitRing } from './AdobeOrbitRing';
@@ -9,7 +8,7 @@ interface HeroProps {
   onOpenContact?: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
+export const Hero: React.FC<HeroProps> = () => {
   const { data } = usePortfolio();
   const { profile, stats } = data;
 
@@ -24,14 +23,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
           {/* Left Column: Monumental Typographic Hierarchy */}
           <div className="lg:col-span-7 flex flex-col justify-center space-y-4 sm:space-y-6 text-left">
             
-            {/* Kicker Tag */}
-            <div className="inline-flex flex-wrap items-center gap-2 sm:gap-3">
-              <span className="h-px w-6 sm:w-8 bg-[#e50914]"></span>
-              <span className="text-[11px] sm:text-sm font-semibold tracking-wider uppercase text-zinc-300 font-mono">
+            {/* Kicker Tag (Hidden on mobile, visible on tablet & desktop) */}
+            <div className="hidden sm:inline-flex items-center gap-3">
+              <span className="h-px w-8 bg-[#e50914]"></span>
+              <span className="text-sm font-semibold tracking-wider uppercase text-zinc-300 font-mono">
                 {profile.greeting}
               </span>
-              <span className="hidden sm:inline text-zinc-600">/</span>
-              <span className="hidden sm:inline text-xs text-zinc-400 font-medium">Independent Practice</span>
+              <span className="text-zinc-600">/</span>
+              <span className="text-xs text-zinc-400 font-medium">Independent Practice</span>
             </div>
 
             {/* Main Headline */}
@@ -50,27 +49,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
                 profile?.tagline || ''
               )}
             </h1>
-
-            {/* Subtle Action Strip */}
-            <div className="flex flex-wrap items-center gap-3 pt-1 sm:pt-2">
-              <a
-                href="#work"
-                className="group inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-xl bg-[#e50914] hover:bg-[#c80812] text-white text-xs sm:text-sm font-bold shadow-[0_0_24px_rgba(229,9,20,0.35)] hover:shadow-[0_0_32px_rgba(229,9,20,0.55)] transition-all active:scale-95"
-              >
-                <span>Explore Selected Works</span>
-                <ArrowDownRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
-              </a>
-
-              {onOpenContact && (
-                <button
-                  onClick={onOpenContact}
-                  className="group inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-xl bg-zinc-900/80 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 text-zinc-200 hover:text-white text-xs sm:text-sm font-semibold transition-all"
-                >
-                  <span>Start a Commission</span>
-                  <ArrowUpRight className="w-4 h-4 text-[#e50914] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </button>
-              )}
-            </div>
 
           </div>
 
