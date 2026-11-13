@@ -6,6 +6,8 @@ export const Testimonials: React.FC = () => {
   const { testimonials } = PORTFOLIO_DATA;
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  if (!testimonials || testimonials.length === 0) return null;
+
   const handleNext = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   };
@@ -14,13 +16,13 @@ export const Testimonials: React.FC = () => {
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
-  const current = testimonials[currentIndex];
+  const current = testimonials[currentIndex] || testimonials[0];
 
   return (
-    <section id="testimonials" className="py-24 lg:py-32 relative border-t border-zinc-800/80 bg-zinc-950/60">
+    <section id="testimonials" className="py-16 sm:py-24 lg:py-32 relative border-t border-zinc-800/80 bg-zinc-950/60 overflow-hidden">
       
       {/* Background Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30rem] h-[30rem] bg-[#e50914]/5 rounded-full blur-[180px] pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[20rem] h-[20rem] sm:w-[30rem] sm:h-[30rem] bg-[#e50914]/5 rounded-full blur-[180px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

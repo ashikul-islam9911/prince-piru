@@ -36,7 +36,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
 
             {/* Main Headline */}
             <h1 className="text-[2rem] leading-[1.12] sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight text-white sm:leading-[1.08] text-balance">
-              {profile.tagline.includes('|') ? (
+              {(profile?.tagline || '').includes('|') ? (
                 <>
                   {profile.tagline.split('|')[0]}{' '}
                   <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-400 mt-1 sm:mt-0">
@@ -47,7 +47,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
                   </span>
                 </>
               ) : (
-                profile.tagline
+                profile?.tagline || ''
               )}
             </h1>
 

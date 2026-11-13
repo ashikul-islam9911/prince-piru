@@ -105,8 +105,9 @@ export const SkillsAndProcess: React.FC = () => {
             </div>
 
             {/* Active Workflow Card Details */}
-            {(() => {
-              const current = workflow[activeStep];
+            {workflow.length > 0 && (() => {
+              const current = workflow[activeStep] || workflow[0];
+              if (!current) return null;
               return (
                 <div className="p-5 sm:p-8 rounded-2xl bg-zinc-950/90 border border-zinc-800 shadow-xl space-y-5 sm:space-y-6">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-zinc-900">

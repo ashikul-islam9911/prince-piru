@@ -107,36 +107,57 @@ const normalizeAnalytics = (raw: AnalyticsData): AnalyticsData => {
   };
 };
 
+const RAW_BASE = import.meta.env.BASE_URL || './';
+const ASSET_BASE = RAW_BASE.endsWith('/') ? RAW_BASE : `${RAW_BASE}/`;
+
 const toRelativeAssetUrl = (url?: string): string => {
   if (!url) return '';
-  return url.startsWith('/assets/') ? `.${url}` : url;
+  if (url.startsWith('./assets/')) {
+    return `${ASSET_BASE}${url.slice(2)}`;
+  }
+  if (url.startsWith('/assets/')) {
+    return `${ASSET_BASE}${url.slice(1)}`;
+  }
+  return url;
 };
 
-const normalizePortfolioData = (raw: Partial<PortfolioDataType>): PortfolioDataType => ({
-  ...PORTFOLIO_DATA,
-  ...raw,
-  profile: {
-    ...PORTFOLIO_DATA.profile,
-    ...(raw.profile || {}),
-    portraitImage: toRelativeAssetUrl(raw.profile?.portraitImage || PORTFOLIO_DATA.profile.portraitImage)
-  },
-  stats: Array.isArray(raw.stats) ? raw.stats : PORTFOLIO_DATA.stats,
-  categories: (Array.isArray(raw.categories) ? raw.categories : PORTFOLIO_DATA.categories).map(cat => ({
-    ...cat,
-    imageUrl: toRelativeAssetUrl(cat.imageUrl)
-  })),
-  projects: (Array.isArray(raw.projects) ? raw.projects : PORTFOLIO_DATA.projects).map(proj => ({
-    ...proj,
-    imageUrl: toRelativeAssetUrl(proj.imageUrl),
-    gallery: (proj.gallery || []).map(asset => ({
-      ...asset,
-      url: toRelativeAssetUrl(asset.url)
-    }))
-  })),
-  skills: Array.isArray(raw.skills) ? raw.skills : PORTFOLIO_DATA.skills,
-  workflow: Array.isArray(raw.workflow) ? raw.workflow : PORTFOLIO_DATA.workflow,
-  testimonials: Array.isArray(raw.testimonials) ? raw.testimonials : PORTFOLIO_DATA.testimonials
-});
+const normalizePortfolioData = (raw: Partial<PortfolioDataType> | null | undefined): PortfolioDataType => {
+  const safeRaw = raw && typeof raw === 'object' ? raw : {};
+  const rawCategories = Array.isArray(safeRaw.categories) && safeRaw.categories.length > 0
+    ? safeRaw.categories
+    : PORTFOLIO_DATA.categories;
+  const rawProjects = Array.isArray(safeRaw.projects)
+    ? safeRaw.projects
+    : PORTFOLIO_DATA.projects;
+
+  return {
+    ...PORTFOLIO_DATA,
+    ...safeRaw,
+    profile: {
+      ...PORTFOLIO_DATA.profile,
+      ...(safeRaw.profile && typeof safeRaw.profile === 'object' ? safeRaw.profile : {}),
+      portraitImage: toRelativeAssetUrl(safeRaw.profile?.portraitImage || PORTFOLIO_DATA.profile.portraitImage)
+    },
+    stats: Array.isArray(safeRaw.stats) ? safeRaw.stats : PORTFOLIO_DATA.stats,
+    categories: rawCategories.filter(Boolean).map(cat => ({
+      ...cat,
+      imageUrl: toRelativeAssetUrl(cat.imageUrl)
+    })),
+    projects: rawProjects.filter(Boolean).map(proj => ({
+      ...proj,
+      imageUrl: toRelativeAssetUrl(proj.imageUrl),
+      gallery: (Array.isArray(proj.gallery) ? proj.gallery : []).filter(Boolean).map(asset => ({
+        ...asset,
+        url: toRelativeAssetUrl(asset.url)
+      }))
+    })),
+    skills: Array.isArray(safeRaw.skills) ? safeRaw.skills : PORTFOLIO_DATA.skills,
+    workflow: Array.isArray(safeRaw.workflow) && safeRaw.workflow.length > 0 ? safeRaw.workflow : PORTFOLIO_DATA.workflow,
+    testimonials: Array.isArray(safeRaw.testimonials) ? safeRaw.testimonials : PORTFOLIO_DATA.testimonials
+  };
+};
+
+const INITIAL_PORTFOLIO_DATA = normalizePortfolioData(PORTFOLIO_DATA);
 
 const PortfolioContext = createContext<PortfolioContextType | undefined>(undefined);
 
@@ -151,7 +172,7 @@ export const PortfolioProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     } catch (e) {
       console.error('Failed to load portfolio data from storage', e);
     }
-    return PORTFOLIO_DATA;
+    return INITIAL_PORTFOLIO_DATA;
   });
 
   // 2. Settings state (Logo, access email, PIN)
@@ -159,7 +180,14 @@ export const PortfolioProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     try {
       const saved = localStorage.getItem(STORAGE_KEY_SETTINGS);
       if (saved) {
-        return { ...DEFAULT_SETTINGS, ...JSON.parse(saved) };
+        const parsed = JSON.parse(saved);
+        if (parsed && typeof parsed === 'object') {
+          return {
+            ...DEFAULT_SETTINGS,
+            ...parsed,
+            logoUrl: toRelativeAssetUrl(parsed.logoUrl || '')
+          };
+        }
       }
     } catch (e) {
       console.error('Failed to load settings from storage', e);
