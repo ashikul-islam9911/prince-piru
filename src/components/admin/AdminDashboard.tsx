@@ -80,7 +80,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose,
   const [newCategoryName, setNewCategoryName] = useState('');
   const [newCategoryTitle, setNewCategoryTitle] = useState('');
   const [newCategoryTagline, setNewCategoryTagline] = useState('');
-  const [newCategoryImg, setNewCategoryImg] = useState('/assets/projects/magazine_silence.jpg');
+  const [newCategoryImg, setNewCategoryImg] = useState('./assets/projects/magazine_silence.jpg');
 
   // Project state
   const [selectedCategoryForProjects, setSelectedCategoryForProjects] = useState<string>(data.categories[0]?.name || 'Magazine Design');
@@ -101,7 +101,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose,
   const [newProjectSubtitle, setNewProjectSubtitle] = useState('');
   const [newProjectClient, setNewProjectClient] = useState('');
   const [newProjectYear, setNewProjectYear] = useState('2025');
-  const [newProjectImg, setNewProjectImg] = useState('/assets/projects/kronos_vault.jpg');
+  const [newProjectImg, setNewProjectImg] = useState('./assets/projects/kronos_vault.jpg');
   const [newProjectAssets, setNewProjectAssets] = useState<ProjectAsset[]>([]);
   const [newProjAssetUrl, setNewProjAssetUrl] = useState('');
   const [newProjAssetTitle, setNewProjAssetTitle] = useState('');
@@ -1395,7 +1395,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose,
                 <div className="flex items-center gap-4">
                   <div className="w-24 h-16 rounded-xl overflow-hidden bg-zinc-900 border border-zinc-800 shrink-0">
                     <img
-                      src={newCategoryImg || '/assets/projects/magazine_silence.jpg'}
+                      src={newCategoryImg || './assets/projects/magazine_silence.jpg'}
                       alt="Category thumbnail preview"
                       className="w-full h-full object-cover"
                     />
@@ -1443,7 +1443,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose,
                     title: trimmedName,
                     displayTitle: trimmedName,
                     tagline: newCategoryTagline.trim() || 'Curated creative collection.',
-                    imageUrl: newCategoryImg || '/assets/projects/magazine_silence.jpg',
+                    imageUrl: newCategoryImg || './assets/projects/magazine_silence.jpg',
                     accentBadge: 'Specialized Suite'
                   });
                   setSelectedCategoryForProjects(trimmedName);
@@ -1508,7 +1508,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose,
                 <div className="flex items-center gap-4">
                   <div className="w-24 h-16 rounded-xl overflow-hidden bg-zinc-900 border border-zinc-800 shrink-0">
                     <img
-                      src={editCatImg || '/assets/projects/magazine_silence.jpg'}
+                      src={editCatImg || './assets/projects/magazine_silence.jpg'}
                       alt="Category thumbnail preview"
                       className="w-full h-full object-cover"
                     />
@@ -1650,7 +1650,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose,
                 <div className="flex items-center gap-4">
                   <div className="w-24 h-16 rounded-xl overflow-hidden bg-zinc-900 border border-zinc-800 shrink-0">
                     <img
-                      src={newProjectImg || '/assets/projects/kronos_vault.jpg'}
+                      src={newProjectImg || './assets/projects/kronos_vault.jpg'}
                       alt="Item thumbnail preview"
                       className="w-full h-full object-cover"
                     />
@@ -1822,7 +1822,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose,
                     showToast('Please enter a project title');
                     return;
                   }
-                  const coverUrl = newProjectImg.trim() || '/assets/projects/kronos_vault.jpg';
+                  const coverUrl = newProjectImg.trim() || './assets/projects/kronos_vault.jpg';
                   const newProj: Project = {
                     id: `proj-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
                     title: newProjectTitle.trim(),
@@ -1944,7 +1944,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose,
                 <div className="flex items-center gap-4">
                   <div className="w-24 h-16 rounded-xl overflow-hidden bg-zinc-900 border border-zinc-800 shrink-0">
                     <img
-                      src={editProjImg || '/assets/projects/kronos_vault.jpg'}
+                      src={editProjImg || './assets/projects/kronos_vault.jpg'}
                       alt="Item thumbnail preview"
                       className="w-full h-full object-cover"
                     />

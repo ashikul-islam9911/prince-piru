@@ -107,6 +107,31 @@ const normalizeAnalytics = (raw: AnalyticsData): AnalyticsData => {
   };
 };
 
+const toRelativeAssetUrl = (url?: string): string => {
+  if (!url) return '';
+  return url.startsWith('/assets/') ? `.${url}` : url;
+};
+
+const normalizePortfolioData = (raw: PortfolioDataType): PortfolioDataType => ({
+  ...raw,
+  profile: {
+    ...raw.profile,
+    portraitImage: toRelativeAssetUrl(raw.profile?.portraitImage)
+  },
+  categories: (raw.categories || []).map(cat => ({
+    ...cat,
+    imageUrl: toRelativeAssetUrl(cat.imageUrl)
+  })),
+  projects: (raw.projects || []).map(proj => ({
+    ...proj,
+    imageUrl: toRelativeAssetUrl(proj.imageUrl),
+    gallery: (proj.gallery || []).map(asset => ({
+      ...asset,
+      url: toRelativeAssetUrl(asset.url)
+    }))
+  }))
+});
+
 const PortfolioContext = createContext<PortfolioContextType | undefined>(undefined);
 
 export const PortfolioProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -115,7 +140,7 @@ export const PortfolioProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     try {
       const saved = localStorage.getItem(STORAGE_KEY_DATA);
       if (saved) {
-        return JSON.parse(saved);
+        return normalizePortfolioData(JSON.parse(saved));
       }
     } catch (e) {
       console.error('Failed to load portfolio data from storage', e);

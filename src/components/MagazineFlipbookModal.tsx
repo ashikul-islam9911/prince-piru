@@ -353,7 +353,7 @@ export const MagazineFlipbookModal: React.FC<MagazineFlipbookModalProps> = ({
         return (
           <div className="w-full h-full relative overflow-hidden bg-zinc-950 select-none">
             <img
-              src="/src/assets/images/magazine_editorial_showcase_1794221786834.jpg"
+              src="./assets/projects/magazine_silence.jpg"
               alt="Feature Spread Left"
               className="w-[200%] h-full max-w-none object-cover object-left"
               referrerPolicy="no-referrer"
@@ -370,7 +370,7 @@ export const MagazineFlipbookModal: React.FC<MagazineFlipbookModalProps> = ({
         return (
           <div className="w-full h-full relative overflow-hidden bg-zinc-950 select-none">
             <img
-              src="/src/assets/images/magazine_editorial_showcase_1794221786834.jpg"
+              src="./assets/projects/magazine_silence.jpg"
               alt="Feature Spread Right"
               className="w-[200%] h-full max-w-none object-cover object-right -translate-x-1/2"
               referrerPolicy="no-referrer"
@@ -387,7 +387,7 @@ export const MagazineFlipbookModal: React.FC<MagazineFlipbookModalProps> = ({
         return (
           <div className="w-full h-full relative overflow-hidden bg-zinc-950 select-none">
             <img
-              src="/src/assets/images/magazine_spread_minimalist_1794223011432.jpg"
+              src="./assets/projects/magazine_spread.jpg"
               alt="Concrete Renaissance Left"
               className="w-[200%] h-full max-w-none object-cover object-left"
               referrerPolicy="no-referrer"
@@ -403,7 +403,7 @@ export const MagazineFlipbookModal: React.FC<MagazineFlipbookModalProps> = ({
         return (
           <div className="w-full h-full relative overflow-hidden bg-zinc-950 select-none">
             <img
-              src="/src/assets/images/magazine_spread_minimalist_1794223011432.jpg"
+              src="./assets/projects/magazine_spread.jpg"
               alt="Concrete Renaissance Right"
               className="w-[200%] h-full max-w-none object-cover object-right -translate-x-1/2"
               referrerPolicy="no-referrer"

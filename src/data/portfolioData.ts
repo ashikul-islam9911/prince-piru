@@ -84,7 +84,7 @@ export const PORTFOLIO_DATA = {
     completedProjects: "150+",
     happyClients: "100+",
     satisfactionRate: "99%",
-    portraitImage: "/assets/aistudio/WhatsApp_Image_2026-07-22_at_8.34.38_PM_copy_c4f4f2fe.jpg"
+    portraitImage: "./assets/aistudio/WhatsApp_Image_2026-07-22_at_8.34.38_PM_copy_c4f4f2fe.jpg"
   },
   stats: [
     { label: "Years Experience", value: "10+", sub: "Editorial & Digital" },
@@ -99,7 +99,7 @@ export const PORTFOLIO_DATA = {
       title: "Magazine Design & Editorial",
       displayTitle: "Editorial Magazines & Collector Editions",
       tagline: "VOGUE, TIME, Avant-Garde architecture monographs & cultural journals with full PDF editions.",
-      imageUrl: "/assets/projects/magazine_covers_collection.jpg",
+      imageUrl: "./assets/projects/magazine_covers_collection.jpg",
       accentBadge: "Editorial Magazine Issues"
     },
     {
@@ -108,7 +108,7 @@ export const PORTFOLIO_DATA = {
       title: "Brand Identity, Logos & Packaging",
       displayTitle: "Brand Identity, Food Logos & Luxury Seals",
       tagline: "Artisanal gourmet food logos, luxury atelier seals, 3D foil mockups, and identity guidelines.",
-      imageUrl: "/assets/projects/food_logo_branding.jpg",
+      imageUrl: "./assets/projects/food_logo_branding.jpg",
       accentBadge: "Identity Suites & Logos"
     },
     {
@@ -117,7 +117,7 @@ export const PORTFOLIO_DATA = {
       title: "UI/UX Systems & Digital Products",
       displayTitle: "UI/UX Systems & Fintech Dashboards",
       tagline: "Institutional wealth management terminals, responsive mobile suites, and atomic design tokens.",
-      imageUrl: "/assets/projects/kronos_vault.jpg",
+      imageUrl: "./assets/projects/kronos_vault.jpg",
       accentBadge: "Digital Products & Apps"
     },
     {
@@ -126,7 +126,7 @@ export const PORTFOLIO_DATA = {
       title: "Book Covers, Spine & Monograph Art",
       displayTitle: "Hardcover Book Covers & Monograph Editions",
       tagline: "Clothbound architectural monographs, split spine foil jackets, and fine art publications.",
-      imageUrl: "/assets/projects/book_cover_editorial_1794505509147.jpg",
+      imageUrl: "./assets/projects/book_cover_editorial_1794505509147.jpg",
       accentBadge: "Hardcovers & Monographs"
     }
   ] as PortfolioCategory[],
@@ -139,7 +139,7 @@ export const PORTFOLIO_DATA = {
       year: "2025",
       client: "Structura Monograph",
       location: "Copenhagen, Denmark",
-      imageUrl: "/assets/projects/magazine_silence.jpg",
+      imageUrl: "./assets/projects/magazine_silence.jpg",
       featured: true,
       summary: "A 168-page biennial architectural and minimalist culture magazine exploring monolithic concrete spaces and stark Scandinavian interior forms.",
       challenge: "Creating an uncompromising Swiss grid layout system capable of accommodating high-contrast monochrome architectural photography alongside dense bilingual essay texts without visual fatigue.",
@@ -157,7 +157,7 @@ export const PORTFOLIO_DATA = {
           title: "Editorial Interior Spread & Modular Grid",
           type: "mockup",
           badge: "Magazine Spread Mockup",
-          url: "/assets/projects/magazine_spread.jpg",
+          url: "./assets/projects/magazine_spread.jpg",
           caption: "Double-page minimalist spread featuring asymmetric margins, micro-folio markers, and duotone monochrome reproduction."
         },
         {
@@ -165,7 +165,7 @@ export const PORTFOLIO_DATA = {
           title: "Bespoke Cover Foil Stamping & Bookmark",
           type: "mockup",
           badge: "3D Print Mockup",
-          url: "/assets/projects/mockup_stationery_foil.jpg",
+          url: "./assets/projects/mockup_stationery_foil.jpg",
           caption: "Tactile foil-stamped bookmark and linen slipcase detailing for the deluxe limited edition."
         },
         {
@@ -173,7 +173,7 @@ export const PORTFOLIO_DATA = {
           title: "Prepress Technical Specification Sheet",
           type: "pdf",
           badge: "Editorial PDF Document",
-          url: "/assets/projects/sample_spec_sheet.pdf",
+          url: "./assets/projects/sample_spec_sheet.pdf",
           caption: "Official CMYK prepress calibration sheet, paper weights (170gsm Fedrigoni Tintoretto), and binding guidelines.",
           fileSize: "2.4 MB"
         }
@@ -187,7 +187,7 @@ export const PORTFOLIO_DATA = {
       year: "2025",
       client: "Kronos Capital",
       location: "Zurich, Switzerland",
-      imageUrl: "/assets/projects/kronos_vault.jpg",
+      imageUrl: "./assets/projects/kronos_vault.jpg",
       featured: true,
       summary: "An ultra-responsive dark-mode financial terminal and mobile wealth companion designed for sovereign wealth funds and institutional asset managers.",
       challenge: "Transforming dense real-time algorithmic market feeds, multi-currency assets, and risk hedges into an intuitive, razor-sharp visual interface with zero latency.",
@@ -205,7 +205,7 @@ export const PORTFOLIO_DATA = {
           title: "Institutional Terminal Dark Dashboard",
           type: "image",
           badge: "UI/UX Desktop Canvas",
-          url: "/assets/projects/kronos_vault.jpg",
+          url: "./assets/projects/kronos_vault.jpg",
           caption: "Modular financial dashboard with real-time liquidity depth charts, tabular numeric alignment, and high-frequency trade feeds."
         },
         {
@@ -213,7 +213,7 @@ export const PORTFOLIO_DATA = {
           title: "Mobile Wealth Companion Interface",
           type: "mockup",
           badge: "Mobile UI Mockup",
-          url: "/assets/projects/uiux_fintech_dashboard_1794505469736.jpg",
+          url: "./assets/projects/uiux_fintech_dashboard_1794505469736.jpg",
           caption: "Handheld iOS terminal with biometric vault authentication and instant multi-asset rebalancing."
         },
         {
@@ -221,7 +221,7 @@ export const PORTFOLIO_DATA = {
           title: "KRONOS Design Token & Component Spec",
           type: "pdf",
           badge: "System PDF Document",
-          url: "/assets/projects/sample_spec_sheet.pdf",
+          url: "./assets/projects/sample_spec_sheet.pdf",
           caption: "Complete design token taxonomy, WCAG AAA dark-mode color contrast proofs, and micro-interaction specifications.",
           fileSize: "3.1 MB"
         }
@@ -235,7 +235,7 @@ export const PORTFOLIO_DATA = {
       year: "2024",
       client: "Aurelius Luxury Group",
       location: "Milan & Paris",
-      imageUrl: "/assets/projects/maison_rouge.jpg",
+      imageUrl: "./assets/projects/maison_rouge.jpg",
       featured: true,
       summary: "Complete visual identity rebrand for a private high-jewelry and haute horlogerie atelier, featuring deep charcoal tactile card stocks and metallic crimson edge foils.",
       challenge: "Elevating the brand to compete directly with century-old Parisian luxury maisons while projecting contemporary architectural refinement and restraint.",
@@ -253,7 +253,7 @@ export const PORTFOLIO_DATA = {
           title: "Primary Logo Mark & Debossed Seal",
           type: "logo",
           badge: "Primary Brand Mark",
-          url: "/assets/projects/brand_mockup_suite.jpg",
+          url: "./assets/projects/brand_mockup_suite.jpg",
           caption: "Architectural geometric 'A' monogram debossed in heavy matte black stock with metallic crimson foil tipping."
         },
         {
@@ -261,7 +261,7 @@ export const PORTFOLIO_DATA = {
           title: "Luxury Stationery & Business Card Suite",
           type: "mockup",
           badge: "Stationery 3D Mockup",
-          url: "/assets/projects/logo_stationery.jpg",
+          url: "./assets/projects/logo_stationery.jpg",
           caption: "600gsm duplexed cotton business cards with hot-stamped crimson metallic edging and correspondence cards."
         },
         {
@@ -269,7 +269,7 @@ export const PORTFOLIO_DATA = {
           title: "Rigid Luxury Presentation Box & Packaging",
           type: "mockup",
           badge: "Packaging Mockup",
-          url: "/assets/projects/packaging_art_direction_1794505525596.jpg",
+          url: "./assets/projects/packaging_art_direction_1794505525596.jpg",
           caption: "Matte noir clamshell jewelry box with magnetic closure and custom velvet interior insert."
         },
         {
@@ -277,7 +277,7 @@ export const PORTFOLIO_DATA = {
           title: "Brand Identity Guidelines & Vector Construction Grid",
           type: "pdf",
           badge: "Brand Guide PDF",
-          url: "/assets/projects/sample_spec_sheet.pdf",
+          url: "./assets/projects/sample_spec_sheet.pdf",
           caption: "80-page brand manual detailing typographic scales, clear space formulas, Pantone textile codes, and print dielines.",
           fileSize: "4.8 MB"
         }
@@ -291,7 +291,7 @@ export const PORTFOLIO_DATA = {
       year: "2024",
       client: "Avery Jensen Press",
       location: "London, UK",
-      imageUrl: "/assets/projects/monolith_echoes.jpg",
+      imageUrl: "./assets/projects/monolith_echoes.jpg",
       featured: true,
       summary: "Award-winning hardcover architectural publication documenting brutalist and modernist urban structures across post-war European capitals.",
       challenge: "Creating a tactile book jacket that stands out dramatically in museum bookstores while honoring the stark concrete geometry of the subject matter.",
@@ -309,7 +309,7 @@ export const PORTFOLIO_DATA = {
           title: "Hardcover Book Jacket & Debossed Spine",
           type: "mockup",
           badge: "Book Hardcover Mockup",
-          url: "/assets/projects/book_cover_editorial_1794505509147.jpg",
+          url: "./assets/projects/book_cover_editorial_1794505509147.jpg",
           caption: "Clothbound hardcover with split crimson linen wrap and blind-embossed architectural typography."
         },
         {
@@ -317,7 +317,7 @@ export const PORTFOLIO_DATA = {
           title: "Full-Bleed Photographic Chapter Opener",
           type: "image",
           badge: "Editorial Photo Plate",
-          url: "/assets/projects/solitude_stone.jpg",
+          url: "./assets/projects/solitude_stone.jpg",
           caption: "Duotone concrete monolith plate with Swiss asymmetric margin notes."
         },
         {
@@ -325,7 +325,7 @@ export const PORTFOLIO_DATA = {
           title: "Book Binding & Paper Weight Dossier",
           type: "pdf",
           badge: "Technical Print PDF",
-          url: "/assets/projects/sample_spec_sheet.pdf",
+          url: "./assets/projects/sample_spec_sheet.pdf",
           caption: "Thread-sewn section binding specifications, head and tail band selections, and FSC certified paper stocks.",
           fileSize: "1.8 MB"
         }
@@ -339,7 +339,7 @@ export const PORTFOLIO_DATA = {
       year: "2025",
       client: "Maison de Rouge",
       location: "Grasse & Paris",
-      imageUrl: "/assets/projects/packaging_art_direction_1794505525596.jpg",
+      imageUrl: "./assets/projects/packaging_art_direction_1794505525596.jpg",
       featured: false,
       summary: "Sensory packaging design and campaign art direction for an exclusive niche fragrance crafted with nocturnal damask rose and smoky cedar.",
       challenge: "Translating an intense, dark, sultry scent profile into tangible matte black glass bottles with crimson blind-embossed typographic packaging.",
@@ -357,7 +357,7 @@ export const PORTFOLIO_DATA = {
           title: "Matte Noir Flacon with Crimson Foil Neck",
           type: "mockup",
           badge: "Bottle 3D Mockup",
-          url: "/assets/projects/aura_botanica.jpg",
+          url: "./assets/projects/aura_botanica.jpg",
           caption: "Heavy frosted glass bottle with crimson gradient foil and engraved brass pump mechanism."
         },
         {
@@ -365,7 +365,7 @@ export const PORTFOLIO_DATA = {
           title: "Editorial Box Packaging & Soft-Touch Sleeve",
           type: "mockup",
           badge: "Packaging Mockup",
-          url: "/assets/projects/packaging_art_direction_1794505525596.jpg",
+          url: "./assets/projects/packaging_art_direction_1794505525596.jpg",
           caption: "Velvet-touch outer presentation box with deep crimson blind-debossing."
         },
         {
@@ -373,7 +373,7 @@ export const PORTFOLIO_DATA = {
           title: "Fragrance Dieline & Foil Stamping Spec",
           type: "pdf",
           badge: "Packaging Dieline PDF",
-          url: "/assets/projects/sample_spec_sheet.pdf",
+          url: "./assets/projects/sample_spec_sheet.pdf",
           caption: "Exact 1:1 vector dielines with bleed, crease, score, and hot-stamping registration marks.",
           fileSize: "2.1 MB"
         }
@@ -387,7 +387,7 @@ export const PORTFOLIO_DATA = {
       year: "2024",
       client: "Horizon Media Syndicate",
       location: "New York, USA",
-      imageUrl: "/assets/projects/magazine_silence.jpg",
+      imageUrl: "./assets/projects/magazine_silence.jpg",
       featured: false,
       summary: "Special edition culture journal analyzing the convergence of digital generative art, haute couture, and sustainable manufacturing in the 21st century.",
       challenge: "Harmonizing disparate editorial contributions from 18 international authors under a cohesive, high-energy typographic visual umbrella.",
@@ -405,7 +405,7 @@ export const PORTFOLIO_DATA = {
           title: "Collector's Issue Cover Masthead & Grid",
           type: "image",
           badge: "Editorial Cover",
-          url: "/assets/projects/magazine_silence.jpg",
+          url: "./assets/projects/magazine_silence.jpg",
           caption: "High-contrast editorial masthead with modern serif treatment and archival paper texture."
         },
         {
@@ -413,7 +413,7 @@ export const PORTFOLIO_DATA = {
           title: "Feature Article Double Page Spread",
           type: "mockup",
           badge: "Spread Mockup",
-          url: "/assets/projects/magazine_spread.jpg",
+          url: "./assets/projects/magazine_spread.jpg",
           caption: "Editorial layout showcasing multi-tier typographical hierarchy and asymmetric callouts."
         },
         {
@@ -421,7 +421,7 @@ export const PORTFOLIO_DATA = {
           title: "Editorial Proof & Layout Dossier",
           type: "pdf",
           badge: "Proof Dossier PDF",
-          url: "/assets/projects/sample_spec_sheet.pdf",
+          url: "./assets/projects/sample_spec_sheet.pdf",
           caption: "High-resolution proof dossier including typography license records and color proof signoffs.",
           fileSize: "3.5 MB"
         }
@@ -435,7 +435,7 @@ export const PORTFOLIO_DATA = {
       year: "2025",
       client: "Atelier & Harvest Group",
       location: "London & New York",
-      imageUrl: "/assets/projects/food_logo_branding.jpg",
+      imageUrl: "./assets/projects/food_logo_branding.jpg",
       featured: true,
       summary: "End-to-end culinary visual identity and food logo system for a Michelin-starred farm-to-table dining establishment.",
       challenge: "Formulating a luxury food brand mark that bridges rustic botanical craftsmanship with modern haute cuisine sophistication.",
@@ -453,7 +453,7 @@ export const PORTFOLIO_DATA = {
           title: "Primary Gourmet Shield Logo on Textured Menu",
           type: "logo",
           badge: "Primary Food Logo",
-          url: "/assets/projects/food_logo_branding.jpg",
+          url: "./assets/projects/food_logo_branding.jpg",
           caption: "Bespoke gold foil stamped crest featuring artisanal wheat sheaf and cutlery on raw handmade cotton card stock."
         },
         {
@@ -461,7 +461,7 @@ export const PORTFOLIO_DATA = {
           title: "Minimalist Culinary Monogram & Ceramic Plate Stamp",
           type: "logo",
           badge: "Secondary Mark",
-          url: "/assets/projects/brand_mockup_suite.jpg",
+          url: "./assets/projects/brand_mockup_suite.jpg",
           caption: "Custom debossed cutlery mark for artisanal ceramic tableware, takeaway packaging, and wax stamp seals."
         },
         {
@@ -469,7 +469,7 @@ export const PORTFOLIO_DATA = {
           title: "Tactile Menu & Wine List Stationery Suite",
           type: "mockup",
           badge: "Stationery 3D Mockup",
-          url: "/assets/projects/logo_stationery.jpg",
+          url: "./assets/projects/logo_stationery.jpg",
           caption: "Leather-bound dinner menu with hot-stamped gold foil typography and matching sommelier notes."
         },
         {
@@ -477,7 +477,7 @@ export const PORTFOLIO_DATA = {
           title: "Food Brand Guidelines & Dieline Specifications",
           type: "pdf",
           badge: "Brand Guide PDF",
-          url: "/assets/projects/sample_spec_sheet.pdf",
+          url: "./assets/projects/sample_spec_sheet.pdf",
           caption: "Complete kitchen dielines, food packaging vectors, Pantone food-safe ink swatches, and clear space rules.",
           fileSize: "4.2 MB"
         }
@@ -491,7 +491,7 @@ export const PORTFOLIO_DATA = {
       year: "2025",
       client: "TIME Media Syndicate",
       location: "New York, USA",
-      imageUrl: "/assets/projects/magazine_covers_collection.jpg",
+      imageUrl: "./assets/projects/magazine_covers_collection.jpg",
       featured: true,
       summary: "Special collector's edition magazine analyzing the iconic red-border format across 10 distinct cultural visionaries.",
       challenge: "Reinventing the classic cover hierarchy with stark monochrome portraiture and high-contrast crimson framing.",
@@ -509,7 +509,7 @@ export const PORTFOLIO_DATA = {
           title: "10-Cover Collector's Suite Grid",
           type: "image",
           badge: "Magazine Covers Collection",
-          url: "/assets/projects/magazine_covers_collection.jpg",
+          url: "./assets/projects/magazine_covers_collection.jpg",
           caption: "Complete array of special edition TIME & VOGUE format covers with high-contrast monochrome portraiture."
         },
         {
@@ -517,7 +517,7 @@ export const PORTFOLIO_DATA = {
           title: "Double-Page Feature Essay Spread",
           type: "mockup",
           badge: "Editorial Spread",
-          url: "/assets/projects/magazine_spread.jpg",
+          url: "./assets/projects/magazine_spread.jpg",
           caption: "Asymmetric Swiss grid layout with high-contrast crimson drop caps and mathematical margin notes."
         },
         {
@@ -525,7 +525,7 @@ export const PORTFOLIO_DATA = {
           title: "TIME Full Magazine Digital PDF Edition",
           type: "pdf",
           badge: "Full Magazine PDF",
-          url: "/assets/projects/sample_spec_sheet.pdf",
+          url: "./assets/projects/sample_spec_sheet.pdf",
           caption: "Complete 144-page publication in press-ready digital format with interactive table of contents.",
           fileSize: "6.8 MB"
         }
@@ -539,7 +539,7 @@ export const PORTFOLIO_DATA = {
       year: "2024",
       client: "Private Luxury Client",
       location: "Paris & Geneva",
-      imageUrl: "/assets/projects/solitude_stone.jpg",
+      imageUrl: "./assets/projects/solitude_stone.jpg",
       featured: false,
       summary: "Privately commissioned luxury publication celebrating a milestone celebration with bespoke foil cover and fine art paper stocks.",
       challenge: "Transforming personal family archives and high-society event photography into a timeless museum-grade magazine monograph.",
@@ -557,7 +557,7 @@ export const PORTFOLIO_DATA = {
           title: "Hardcover Milestone Edition with Gold Foil Slipcase",
           type: "mockup",
           badge: "Luxury Monograph Mockup",
-          url: "/assets/projects/mockup_stationery_foil.jpg",
+          url: "./assets/projects/mockup_stationery_foil.jpg",
           caption: "Custom clothbound hardcover monograph with metallic foil typography and silk bookmark ribbon."
         },
         {
@@ -565,7 +565,7 @@ export const PORTFOLIO_DATA = {
           title: "Archival Memory & Retrospective Spread",
           type: "mockup",
           badge: "Interior Spread",
-          url: "/assets/projects/magazine_spread.jpg",
+          url: "./assets/projects/magazine_spread.jpg",
           caption: "Curated duotone retrospective spread balancing historic archival photos with modern typography."
         },
         {
@@ -573,7 +573,7 @@ export const PORTFOLIO_DATA = {
           title: "Celebration Magazine Full PDF Edition",
           type: "pdf",
           badge: "Keepsake PDF",
-          url: "/assets/projects/sample_spec_sheet.pdf",
+          url: "./assets/projects/sample_spec_sheet.pdf",
           caption: "Complete celebration publication with typography specifications and prepress color calibration.",
           fileSize: "5.1 MB"
         }
