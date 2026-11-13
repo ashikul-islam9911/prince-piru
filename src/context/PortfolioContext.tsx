@@ -107,16 +107,10 @@ const normalizeAnalytics = (raw: AnalyticsData): AnalyticsData => {
   };
 };
 
-const RAW_BASE = import.meta.env.BASE_URL || './';
-const ASSET_BASE = RAW_BASE.endsWith('/') ? RAW_BASE : `${RAW_BASE}/`;
-
 const toRelativeAssetUrl = (url?: string): string => {
   if (!url) return '';
-  if (url.startsWith('./assets/')) {
-    return `${ASSET_BASE}${url.slice(2)}`;
-  }
   if (url.startsWith('/assets/')) {
-    return `${ASSET_BASE}${url.slice(1)}`;
+    return `.${url}`;
   }
   return url;
 };
