@@ -1,0 +1,67 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 4 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 5 0 R /Resources << /Font << /F1 7 0 R >> >> >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 6 0 R /Resources << /Font << /F1 7 0 R >> >> >>
+endobj
+5 0 obj
+<< /Length 214 >>
+stream
+BT
+/F1 24 Tf
+50 720 Td
+(PRINCE MAHMUD - EDITORIAL SPECIFICATION) Tj
+/F1 12 Tf
+0 -36 Td
+(Project: Brand Guidelines & Grid Systems) Tj
+0 -20 Td
+(Paper Stock: Fedrigoni Tintoretto Gesso 200gsm) Tj
+0 -20 Td
+(Color Palette: Obsidian Black Pantone 419C / Crimson Foil Kurz 385) Tj
+0 -20 Td
+(Binding: Swiss Open Spine Thread-Sewn) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Length 180 >>
+stream
+BT
+/F1 20 Tf
+50 720 Td
+(PAGE 02 - TYPOGRAPHY & DIELINE SPECIFICATIONS) Tj
+/F1 12 Tf
+0 -36 Td
+(Primary Typeface: Archivo Display 800) Tj
+0 -20 Td
+(Secondary Typeface: Playfair Display Subhead 400 Italic) Tj
+0 -20 Td
+(All artwork 100% vector CMYK with 3mm bleed.) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000125 00000 n 
+0000000247 00000 n 
+0000000369 00000 n 
+0000000636 00000 n 
+0000000869 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+942
+%%EOF

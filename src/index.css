@@ -1,0 +1,263 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-display: 'Syne', sans-serif;
+    --font-editorial: 'Playfair Display', serif;
+    --color-crimson: #e50914;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #09090b;
+    color: #f4f4f5;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e50914;
+}
+
+/* Crimson glow utility */
+.crimson-glow {
+  box-shadow: 0 0 40px -10px rgba(229, 9, 20, 0.35);
+}
+
+.crimson-text-glow {
+  text-shadow: 0 0 20px rgba(229, 9, 20, 0.45);
+}
+
+.crimson-border-glow {
+  border-color: rgba(229, 9, 20, 0.5);
+  box-shadow: 0 0 25px -5px rgba(229, 9, 20, 0.3);
+}
+
+/* Smooth floating animation for hero portrait */
+@keyframes heroFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.4deg);
+  }
+}
+
+.animate-hero-float {
+  animation: heroFloat 6s ease-in-out infinite;
+}
+
+/* Ambient crimson pulsing glow */
+@keyframes crimsonPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.04);
+  }
+}
+
+.animate-crimson-pulse {
+  animation: crimsonPulse 4s ease-in-out infinite;
+}
+
+/* Subtle laser sweep across border */
+@keyframes laserSweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+/* 3D Flipbook Perspective & Transform utilities */
+.perspective-2500 {
+  perspective: 2500px;
+}
+
+.perspective-3000 {
+  perspective: 3000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(-180deg);
+}
+
+.paper-spine-shadow {
+  background: linear-gradient(to right, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.15) 3%, transparent 12%, transparent 88%, rgba(0,0,0,0.15) 97%, rgba(0,0,0,0.4) 100%);
+}
+
+.paper-left-shadow {
+  background: linear-gradient(to left, rgba(0,0,0,0.3) 0%, transparent 15%);
+}
+
+.paper-right-shadow {
+  background: linear-gradient(to right, rgba(0,0,0,0.3) 0%, transparent 15%);
+}
+
+/* Randomized floating animations for Photoshop & Illustrator UI tool widgets */
+@keyframes psFloatSlow1 {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-14px) translateX(6px) rotate(1.2deg);
+  }
+  66% {
+    transform: translateY(-6px) translateX(-5px) rotate(-1deg);
+  }
+}
+
+@keyframes psFloatSlow2 {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  40% {
+    transform: translateY(-18px) translateX(-8px) rotate(-2deg);
+  }
+  75% {
+    transform: translateY(8px) translateX(4px) rotate(1deg);
+  }
+}
+
+@keyframes psFloatSlow3 {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-12px) translateX(10px) scale(1.02) rotate(1.5deg);
+  }
+}
+
+@keyframes psFloatSlow4 {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  30% {
+    transform: translateY(10px) translateX(-6px) rotate(-1.5deg);
+  }
+  70% {
+    transform: translateY(-16px) translateX(5px) rotate(1.2deg);
+  }
+}
+
+@keyframes psFloatSlow5 {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-22px) translateX(-6px) rotate(-2.5deg);
+  }
+}
+
+.animate-ps-float-1 {
+  animation: psFloatSlow1 6.8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.animate-ps-float-2 {
+  animation: psFloatSlow2 8.4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.animate-ps-float-3 {
+  animation: psFloatSlow3 7.2s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.animate-ps-float-4 {
+  animation: psFloatSlow4 9.1s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.animate-ps-float-5 {
+  animation: psFloatSlow5 7.8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+@keyframes psFloatSlow6 {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  35% {
+    transform: translateY(-20px) translateX(8px) rotate(2deg);
+  }
+  70% {
+    transform: translateY(12px) translateX(-6px) rotate(-1.5deg);
+  }
+}
+
+@keyframes psFloatSlow7 {
+  0%, 100% {
+    transform: translateY(0px) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-16px) scale(1.03) rotate(-2deg);
+  }
+}
+
+@keyframes psFloatSlow8 {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  45% {
+    transform: translateY(15px) translateX(12px) rotate(1.8deg);
+  }
+  80% {
+    transform: translateY(-10px) translateX(-8px) rotate(-1deg);
+  }
+}
+
+.animate-ps-float-6 {
+  animation: psFloatSlow6 10.2s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.animate-ps-float-7 {
+  animation: psFloatSlow7 8.9s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.animate-ps-float-8 {
+  animation: psFloatSlow8 11.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.ps-tool-card {
+  background: rgba(20, 21, 26, 0.92);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.ps-glow-blue {
+  box-shadow: 0 0 30px -4px rgba(49, 168, 255, 0.5), 0 15px 35px -5px rgba(0, 0, 0, 0.8);
+}
+
+.ai-glow-orange {
+  box-shadow: 0 0 30px -4px rgba(255, 154, 0, 0.5), 0 15px 35px -5px rgba(0, 0, 0, 0.8);
+}
+
+
+
